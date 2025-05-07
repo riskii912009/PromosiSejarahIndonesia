@@ -1,210 +1,226 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sejarah Indonesia - Download APK</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sejarah Indonesia</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        body {
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #fff5f5, #ffe6e6);
-            color: #333;
-        }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #fff;
+      color: #333;
+      line-height: 1.6;
+    }
 
-        header {
-            background: linear-gradient(135deg, #b71c1c, #f44336);
-            color: white;
-            text-align: center;
-            padding: 80px 20px;
-        }
+    .hero {
+      background: linear-gradient(to right, #8B0000, #D32F2F);
+      color: white;
+      text-align: center;
+      padding: 100px 20px;
+    }
 
-        header h1 {
-            font-size: 3rem;
-            margin-bottom: 10px;
-        }
+    .hero h1 {
+      font-size: 3.2rem;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
 
-        header p {
-            font-size: 1.2rem;
-            margin-bottom: 20px;
-        }
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 25px;
+    }
 
-        header .btn {
-            background: white;
-            color: #b71c1c;
-            padding: 15px 30px;
-            border-radius: 30px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: 0.3s;
-        }
+    .btn {
+      display: inline-block;
+      background: white;
+      color: #D32F2F;
+      padding: 12px 28px;
+      border-radius: 40px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: 0.3s ease-in-out;
+    }
 
-        header .btn:hover {
-            background: #ffe6e6;
-        }
+    .btn:hover {
+      background: #ffe6e6;
+      transform: scale(1.05);
+    }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
+    .hero-images {
+      margin-top: 40px;
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
 
-        .mockup {
-            margin-top: 30px;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
+    .hero-images img {
+      max-width: 240px;
+      border-radius: 20px;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+      transition: transform 0.3s;
+    }
 
-        .mockup img {
-            max-width: 300px;
-            border-radius: 20px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-            transition: 0.3s;
-        }
+    .hero-images img:hover {
+      transform: scale(1.07);
+    }
 
-        .mockup img:hover {
-            transform: scale(1.05);
-        }
-        .mockup-container {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    margin-top: 40px;
-    flex-wrap: wrap;
+    .features {
+      background: #fff7f7;
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    .features h2 {
+      font-size: 2.5rem;
+      color: #b71c1c;
+      margin-bottom: 50px;
+    }
+
+    .feature-list {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .feature {
+      background: white;
+      padding: 30px 25px;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      width: 280px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .feature:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+    }
+
+    .feature h3 {
+      font-size: 1.4rem;
+      color: #d32f2f;
+      margin-bottom: 10px;
+    }
+
+    .feature p {
+      font-size: 0.95rem;
+    }
+
+    @keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.mockup-item {
-    background: #939393;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    overflow: hidden;
-    width: 300px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.mockup-item img {
-    width: 100%;
-    display: block;
-    border-radius: 20px;
+@keyframes subtleVibrate {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-2px);
+  }
 }
 
-.mockup-item:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+footer {
+  background: linear-gradient(45deg, #b71c1c, #d32f2f);
+  color: white;
+  text-align: center;
+  padding: 25px;
+  font-size: 0.95rem;
+  animation: fadeInUp 1.5s ease-out forwards, subtleVibrate 3s infinite ease-in-out;
+  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2);
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  opacity: 0; /* perlu untuk animasi fadeInUp */
 }
 
 
-        .features {
-            text-align: center;
-            padding: 60px 20px;
-        }
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.4rem;
+      }
 
-        .features h2 {
-            font-size: 2.5rem;
-            margin-bottom: 40px;
-            color: #b71c1c;
-        }
+      .features h2 {
+        font-size: 2rem;
+      }
 
-        .feature-list {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 30px;
-        }
+      .feature {
+        width: 100%;
+        max-width: 320px;
+      }
 
-        .feature {
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-            padding: 30px;
-            width: 300px;
-            transition: 0.3s;
-        }
-
-        .feature:hover {
-            transform: translateY(-10px);
-        }
-
-        .feature h3 {
-            color: #b71c1c;
-            margin-bottom: 10px;
-        }
-
-        footer {
-            background: #b71c1c;
-            color: white;
-            text-align: center;
-            padding: 20px;
-            margin-top: 60px;
-        }
-
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 2rem;
-            }
-
-            .feature-list {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .mockup img {
-                max-width: 90%;
-            }
-        }
-    </style>
+      .hero-images img {
+        width: 100%;
+        max-width: 200px;
+      }
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1>📝 Sejarah Indonesia</h1>
-            <p>Belajar sejarah Indonesia dengan mudah & menarik melalui aplikasi keren kami!</p>
-            <a href="link-apk-anda.apk" class="btn">Download APK Sekarang</a>
-            <div class="mockup-container">
-                <div class="mockup-item">
-                    <img src="f1.png" alt="Mockup HP">
-                </div>
-                <div class="mockup-item">
-                    <img src="f2.png" alt="Mockup Laptop">
-                </div>
-            </div>
-            
-        </div>
-    </header>
+  <header class="hero" data-aos="fade-down">
+    <h1>📘 Sejarah Indonesia</h1>
+    <p>Belajar sejarah dengan cara modern, interaktif & menyenangkan!</p>
+    <a href="#" class="btn" data-aos="zoom-in">📥 Download APK Sekarang</a>
+    <div class="hero-images" data-aos="fade-up">
+      <img src="f1.png" alt="Tampilan Aplikasi di HP">
+      <img src="f2.png" alt="Tampilan Website">
+    </div>
+  </header>
 
-    <section class="features">
-        <div class="container">
-            <h2>✨ Fitur Unggulan</h2>
-            <div class="feature-list">
-                <div class="feature-list">
-                    <div class="feature">
-                        <h3>📚 Materi Lengkap</h3>
-                        <p>Dari zaman prasejarah sampai reformasi, semua ada!</p>
-                    </div>
-                    <div class="feature">
-                        <h3>🔖 Simpan Novel Favorit</h3>
-                        <p>Tambahkan ke daftar favoritmu & baca kapan saja dengan fitur cart.</p>
-                    </div>
-                    <div class="feature">
-                        <h3>🔍 Cepat & Mudah</h3>
-                        <p>Cari materi apapun dengan fitur pencarian pintar.</p>
-                    </div>
-                </div>
-                
-            </div>
-        </div>
-    </section>
+  <section class="features">
+    <h2 data-aos="fade-up">✨ Fitur Unggulan</h2>
+    <div class="feature-list">
+      <div class="feature" data-aos="fade-right">
+        <h3>📚 Materi Lengkap</h3>
+        <p>Dari zaman prasejarah hingga reformasi. Semua tersedia lengkap!</p>
+      </div>
+      <div class="feature" data-aos="fade-up">
+        <h3>❤️ Simpan Favorit</h3>
+        <p>Tambahkan ke daftar bacaan favorit dan akses kapan saja.</p>
+      </div>
+      <div class="feature" data-aos="fade-left">
+        <h3>🔍 Cari Cepat</h3>
+        <p>Fitur pencarian pintar untuk temukan materi dengan mudah.</p>
+      </div>
+    </div>
+  </section>
 
-    <footer>
-        <p>&copy; 2025 Sejarah Indonesia. Semua hak cipta dilindungi.</p>
-    </footer>
+  <footer data-aos="zoom-in">
+    <p>© 2025 Sejarah Indonesia. Hak cipta dilindungi.</p>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
+  </script>
 </body>
 </html>
